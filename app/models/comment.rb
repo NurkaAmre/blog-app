@@ -1,5 +1,10 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
-  has_many :likes, dependent: :destroy
+  after_save :increment_post_comments_counter
+  
+  private
+  def increment_post_comments_counter
+    post.increment!(:comments_counter)
+  end
 end
