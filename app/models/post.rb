@@ -4,8 +4,13 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   after_save :increment_posts_counter
 
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :LikesCounter, numericality: { greater_than_or_equal_to: 0 }
+  validates :CommentsCounter, numericality: { greater_than_or_equal_to: 0 }
+
   def increment_posts_counter
-    user.increment!(:posts_counter)
+    author.increment!(:PostsCounter)
   end
 
   def recent_comments
