@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>List of posts</title>
-</head>
-<body>
-
-
-</body>
-</html>
+<% @posts.each do |post| %>
+<%= link_to user_post_url(id: post.id) do %>
+    <div class="info-box shadow-pop-br">
+      <h3>Post <%= counter %></h3>
+      <p><%= post.text %></p>
+      <% counter += 1 %>
+      <% comments = Comment.where(:post_id => post.id) %>
+      <h4>Comments (<%= comments.count %>):</h4>
+      <% comments.each do |comment| %>
+        <p><%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
