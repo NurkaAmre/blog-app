@@ -1,5 +1,4 @@
 <% @users.each do |user|%>
-
 <div class='d-flex'>
 <div class="card m-5 text-decoration-none" style="width: 20rem; heigth: 20rem;">
       <% if user.photo %>
@@ -8,11 +7,11 @@
           <p> No image found </p>
       <% end %>
 </div>
-  <div class="card mt-5 --bs-dark bg-warning border border-dark-subtle" style="width: 50rem;">
+  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 50rem;">
   <div class="card-body ">
-    <h3 class="card-title text-black text-decoration-none"><%= user.name %></h3>
-    <p class="card-text text-black text-end ">Number of posts: <span><%= user.PostsCounter %></span></p>
-    <%= link_to "See Details", user_path(user), class: "btn btn-secondary" %>
+    <h1 class="card-title text-black text-decoration-none"><%= user.name %></h1>  
+    <%= link_to "See Details", user_path(user), class: "btn btn-secondary mt-3" %>
+     <h6 class="card-text text-black text-end">Number of posts: <span><%= user.PostsCounter %></span></h6>
   </div>
     </div>
     </div>

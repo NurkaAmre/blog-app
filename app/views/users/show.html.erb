@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>I am user show</title>
-</head>
-<body>
+<%# <%= render "users/index" %> %>
 
+<section>
 
-</body>
-</html>
+  <div class="card mt-5 text-light mb-5 --bs-dark bg-secondary border border-dark-subtle" style="width: 80rem;">
+    <div class='card-body'>
+      <h2>Bio: </h2>
+      <h6><%= @user.bio %></h6>
+    </div>
+  </div>
+  
+  <% counter = 1 %>
+  <% @user.posts.each do |post| %>
+  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
+    <div class='card-body'>
+      <h3 class="card-title text-black">Post #<%= counter %></h3>
+      <h6><%= post.text %></h6>
+      <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary mt-3"%>
+      <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+   </div>
+  </div>
+    <% counter += 1 %>
+  <% end %>
+   
+</section>
