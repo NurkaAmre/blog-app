@@ -18,3 +18,7 @@
 * {
     text-decoration: none;
   }
+
+  .bg-primary {
+    background-color: blue;
+  }

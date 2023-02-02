@@ -1,6 +1,22 @@
-<%# <%= render "users/index" %> %>
+<section class="container">
+<div class='d-flex mr-4'>
+<div class="card m-5 text-decoration-none mr-4" style="width: 15rem; heigth: 15rem;">
+      <% if @user.photo %>
+        <img src="<%= @user.photo %>" class="rounded float-start" alt="...">
+      <% else %>
+          <p> No image found </p>
+      <% end %>
+</div>
+  <div class="card mt-5 mb-5 --bs-dark bg-success border border-dark-subtle" style="width: 60rem;">
+  <div class="card-body ">
+    <h1 class="card-title text-light text-decoration-none"><%= @user.name %></h1>  
+     <h6 class="card-text text-light text-end">Number of posts: <span><%= @user.PostsCounter %></span></h6>
+  </div>
+    </div>
+    </div>
 
-<section>
+
+
 
   <div class="card mt-5 text-light mb-5 --bs-dark bg-secondary border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
