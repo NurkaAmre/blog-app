@@ -12,7 +12,7 @@
 
    <% @post.recent_comments.each do |comment| %>
     <hr p-2>
-        <div class="card-body">
+        <div class="card-body mb-5">
           <p>
             <strong><%= comment.author.name %>:</strong>
             <span><%= comment.text %></span>

@@ -14,11 +14,3 @@
  *= require_self
  */
  @import 'bootstrap';
-
-* {
-    text-decoration: none;
-  }
-
-  .bg-primary {
-    background-color: blue;
-  }
