@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>I am post show</title>
-</head>
-<body>
+ <% counter = 1 %>
+  <% @user.posts.each do |post| %>
+  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
+    <div class='card-body'>
+      <h3 class="card-title text-black">Post #<%= counter %> by <%= post.author.name %></h3>
+       <h6 class='card-text text-black text-end mb-5 mt-0"'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+      <h6><%= post.text %></h6>
+   </div>
+  </div>
+    <% counter += 1 %>
+  <% end %>
 
-
-</body>
-</html>
+   <% @post.recent_comments.each do |comment| %>
+    <hr p-2>
+        <div class="card-body mb-5">
+          <p>
+            <strong><%= comment.author.name %>:</strong>
+            <span><%= comment.text %></span>
+          </p>
+        </div>
+      <% end %>
