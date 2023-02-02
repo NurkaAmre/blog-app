@@ -1,12 +1,12 @@
-<div class="info-box">
-  <h3>Title: <%= @post.title %></h3>
-  <span>Comments: <%= @post.CommentsCounter %> Likes: <%= @post.LikesCounter%></span>
-  <h4>Text: <%= @post.text %></h4>
-</div>
-
-<div class="info-box">
-  <h4>Comments (<%= @comments.count %>):</h4>
-  <% @comments.each do |comment| %>
-    <p><%= comment.text %></p>
+ <% counter = 1 %>
+  <% @user.posts.each do |post| %>
+  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
+    <div class='card-body'>
+      <h3 class="card-title text-black">Post #<%= counter %></h3>
+      <h6><%= post.text %></h6>
+      <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary mt-3"%>
+      <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+   </div>
+  </div>
+    <% counter += 1 %>
   <% end %>
-</div>
