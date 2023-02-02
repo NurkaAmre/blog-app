@@ -23,6 +23,7 @@
       
       <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
    </div>
+     <% counter += 1 %>
     <% post.recent_comments.each do |comment| %>
     <hr p-2>
         <div class="card-body">

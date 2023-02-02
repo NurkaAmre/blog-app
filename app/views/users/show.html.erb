@@ -26,7 +26,7 @@
   </div>
   
   <% counter = 1 %>
-  <% @user.posts.each do |post| %>
+  <% @user.recent_posts.each do |post| %>
   <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
       <h3 class="card-title text-black">Post #<%= counter %></h3>
