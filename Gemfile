@@ -73,3 +73,6 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
+
+gem 'bootstrap_form', '~> 5.1'
+gem 'font-awesome-rails'
