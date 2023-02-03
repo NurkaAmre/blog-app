@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
+    @posts = Post.where(author_id: @user)
   end
 
   def show
@@ -14,9 +15,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author = @user
-    @post.save
-    redirect_to user_posts_path
+    @post.author_id = current_user.id
+    if @post.save
+    redirect_to user_posts_path(current_user)
+    else
+      render :new
+    end
   end
 
   private

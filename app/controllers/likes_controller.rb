@@ -6,10 +6,11 @@ class LikesController < ApplicationController
     def create
         @like = Like.new(likes_params)
         @user = current_user
-        @like.author = @user
+        @like.author_id = current_user.id
+        @like.post_id = params[:post_id]
 
         if @like.save
-            redirect_to user_post_path(id: params.require(:post_id), author_id: params.require(:user_id))
+            redirect_to user_post_url(current_user.id, post.id)
         else
             render 'new'
         end

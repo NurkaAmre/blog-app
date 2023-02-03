@@ -32,11 +32,12 @@
     <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
       <h3 class="card-title text-black">Post #<%= counter %></h3>
       <h6><%= post.text %></h6>
-      <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary mt-3"%>
+     
       
    </div>
   </div>
     <% counter += 1 %>
+    
   <% end %>
-   
+    <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary mt-3"%>
 </section>
