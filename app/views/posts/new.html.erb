@@ -1,0 +1,6 @@
+<h1>New Post</h1>
+<%= bootstrap_form_with model: post, url: user_posts_path, method: :post, scope: :post do |form| %>
+  <%= form.text_field :title, placeholder: 'Title' %>
+  <%= form.text_area :text, placeholder: 'Text' %>
+  <%= form.submit %>
+<% end %>

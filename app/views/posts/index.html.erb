@@ -10,6 +10,7 @@
   <div class="card mt-5 mb-5 --bs-dark bg-success border border-dark-subtle" style="width: 60rem;">
   <div class="card-body ">
     <h1 class="card-title text-light text-decoration-none"><%= @user.name %></h1>  
+     <%= link_to 'Add new post', user_post_path(id: post.id), class: "btn btn-secondary mt-3"%>
      <h6 class="card-text text-light text-end">Number of posts: <span><%= @user.PostsCounter %></span></h6>
   </div>
     </div>
