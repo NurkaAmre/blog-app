@@ -11,7 +11,7 @@
   <div class="card-body ">
     <h1 class="card-title text-light text-decoration-none"><%= @user.name %></h1>  
      
-     <h6 class="card-text text-light text-end">Number of posts: <span><%= @user.PostsCounter %></span></h6>
+     <h6 class="card-text text-light text-end">Number of posts: <span><%= @user.PostCounter %></span></h6>
   </div>
     </div>
     </div>
@@ -22,11 +22,13 @@
     <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
       <h3 class="card-title text-black">Post #<%= counter %></h3>
       
-      <h6><%= post.text %></h6>    
-      <%= link_to 'Create new post', new_user_post_path(@user), class: "btn btn-dark mt-5 mb-0 text-light"%>
+      <h6><%= post.text %></h6>
+      <div class="display flex">
+      <%= link_to 'Create new post', new_user_post_path(@user), class: "btn btn-dark mt-5 mb-0 text-light"%><br>
       <%= link_to 'All comments', user_post_path(id: post.id), class: "btn btn-dark mt-5 mb-0 center text-light", style: "width: auto"%>
       <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes", class: 'like_button' do |form| %>
-        <%= form.submit "Like Post" %>
+      <%= form.submit "Like Post", class: "btn btn-dark mt-5 mb-0 center text-light" %>
+      </div>
       <% end %>
       
       

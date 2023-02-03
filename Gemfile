@@ -75,3 +75,4 @@ group :test do
 end
 
 gem 'bootstrap_form', '~> 5.1'
+gem 'font-awesome-rails'
