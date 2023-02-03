@@ -16,12 +16,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author = @user
     @post.save
-    redirect_to user_posts_path(@user)
+    redirect_to user_posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text )
   end
 end

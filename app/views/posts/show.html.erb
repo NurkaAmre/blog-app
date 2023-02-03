@@ -9,6 +9,7 @@
   </div>
     <% counter += 1 %>
   <% end %>
+   <%# <%= link_to 'Add new comment', user_post_path(id: post.id), class: "btn btn-secondary mt-3"%>
 
    <% @post.recent_comments.each do |comment| %>
     <hr p-2>
@@ -19,3 +20,7 @@
           </p>
         </div>
       <% end %>
+
+       <div class="text-center">
+  <%= link_to 'Create a comment', user_post_path(), class: "btn btn-dark center text-light m-2", style: "width: auto"%>
+  </div>

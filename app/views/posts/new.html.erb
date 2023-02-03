@@ -1,6 +1,12 @@
-<h1>New Post</h1>
-<%= bootstrap_form_with model: post, url: user_posts_path, method: :post, scope: :post do |form| %>
-  <%= form.text_field :title, placeholder: 'Title' %>
-  <%= form.text_area :text, placeholder: 'Text' %>
-  <%= form.submit %>
+<section class: "text-center">
+<h2 class="">New post:</h2>
+<br>
+<%= form_with model: @post, url: user_posts_path do |form| %>
+  <div class="mb-3">
+      <%= form.text_field :title, placeholder: 'Title' , class: "form-control form-control-lg mt-3" %>
+      <%= form.text_area :text, placeholder: 'Text', class: "form-control form-control-lg mt-3" %>
+      <%= form.submit "Submit Post", class: "btn btn-dark center text-light m-2" %>
+  </div>
 <% end %>
+</section>
+

@@ -10,18 +10,22 @@
   <div class="card mt-5 mb-5 --bs-dark bg-success border border-dark-subtle" style="width: 60rem;">
   <div class="card-body ">
     <h1 class="card-title text-light text-decoration-none"><%= @user.name %></h1>  
-     <%= link_to 'Add new post', user_post_path(id: post.id), class: "btn btn-secondary mt-3"%>
+     
      <h6 class="card-text text-light text-end">Number of posts: <span><%= @user.PostsCounter %></span></h6>
   </div>
     </div>
     </div>
 <% counter = 1 %>
   <% @user.posts.each do |post| %>
-  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
+  <div class="card mt-5  --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
+    <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
       <h3 class="card-title text-black">Post #<%= counter %></h3>
+      
       <h6><%= post.text %></h6>    
-      <h6 class='card-text text-black text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+      <%= link_to 'Create new post', new_user_post_path(@user), class: "btn btn-dark mt-5 mb-0 text-light"%>
+      <%= link_to 'All comments', user_post_path(id: post.id), class: "btn btn-dark mt-5 mb-0 center text-light", style: "width: auto"%>
+      
    </div>
      <% counter += 1 %>
     <% post.recent_comments.each do |comment| %>
@@ -31,10 +35,16 @@
             <strong><%= comment.author.name %>:</strong>
             <span><%= comment.text %></span>
           </p>
-          <%= link_to 'See all comments', user_post_path(id: post.id), class: "btn btn-secondary mt-3"%>
+          
         </div>
       <% end %>
   </div>
+  <div class="text-center">
+
+  </div>
+ 
   <% end %>
+  
+  
   </section>
      
