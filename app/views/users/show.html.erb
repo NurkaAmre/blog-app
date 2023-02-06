@@ -7,10 +7,10 @@
           <p> No image found </p>
         <% end %>
       </div>
-    <div class="card mt-5 mb-5 --bs-dark bg-success border border-dark-subtle" style="width: 60rem;">
+    <div class="card mt-5 mb-5 --bs-dark bg-dark border border-dark-subtle" style="width: 60rem;">
       <div class="card-body ">
         <h1 class="card-title text-light text-decoration-none"><%= @user.name %></h1>  
-        <h6 class="card-text text-">Number of posts: <span><%= @user.PostCounter %></span></h6>
+        <h6 class="card-text text-light">Number of posts: <span><%= @user.PostCounter %></span></h6>
         <div class="card mt-5 text-light mb-5 --bs-dark bg-secondary border border-dark-subtle">
       <div class='card-body'>
         <h2>Bio: </h2>
@@ -40,5 +40,5 @@
     <% counter += 1 %>
     
   <% end %>
-    <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary d-flex justify-content-center"%>
+    <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-dark d-flex justify-content-center"%>
 </section>

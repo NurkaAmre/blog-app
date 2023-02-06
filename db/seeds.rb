@@ -16,14 +16,14 @@ authors = User.create([
   ])
 
 posts = Post.create([
-  {author_id: 1, title: 'Shadow clone jutsu', text: ' A technique that allows Naruto to create multiple copies of himself. The clones have their own consciousness and can perform various tasks.'},
-  {author_id: 1, title: 'Nine-Tailed Fox Chakra Mode', text: 'A powerful transformation that Naruto can access when he draws on the chakra of the Nine-Tailed Fox that was sealed inside him. In this mode, Naruto\'s power and speed are greatly increased.'},
-  {author_id: 2, title: 'Chidori', text: 'A powerful ninjutsu technique that Sasuke learned from Kakashi Hatake. Chidori involves gathering lightning-based chakra in the user\'s hand, creating a piercing and lethal weapon.'},
-  {author_id: 3, title: 'Byakugan', text: 'A powerful dojutsu unique to the Hyuga clan. The Byakugan grants Hinata near 360-degree vision, allowing her to see through solid objects and predict the movements of her opponents.'},
-  {author_id: 5, title: 'Strength of a Hundred Seal', text: 'A powerful medical ninjutsu technique that Sakura learns from Tsunade, the Fifth Hokage. The Strength of a Hundred Seal temporarily enhances Sakura\'s physical abilities, making her much stronger and faster.'},
-  {author_id: 4, title: 'Sharingan', text: 'An advanced dojutsu that Kakashi possesses. The Sharingan allows him to copy other ninja\'s techniques, as well as provide enhanced perception and reaction time.'},
-  {author_id: 2, title: 'Falcon Punch', text: 'A powerful taijutsu technique that Sasuke learns from Orochimaru. The technique involves launching a powerful punch with enough force to knock the target away.'},
-  {author_id: 3, title: 'Protective Eight Trigrams Sixty-Four Palms', text: 'A defensive version of the Eight Trigrams Sixty-Four Palms technique. Hinata uses this technique to protect herself and her allies from harm.'}
+  {author_id: 35, title: 'Shadow clone jutsu', text: ' A technique that allows Naruto to create multiple copies of himself. The clones have their own consciousness and can perform various tasks.'},
+  {author_id: 35, title: 'Nine-Tailed Fox Chakra Mode', text: 'A powerful transformation that Naruto can access when he draws on the chakra of the Nine-Tailed Fox that was sealed inside him. In this mode, Naruto\'s power and speed are greatly increased.'},
+  {author_id: 36, title: 'Chidori', text: 'A powerful ninjutsu technique that Sasuke learned from Kakashi Hatake. Chidori involves gathering lightning-based chakra in the user\'s hand, creating a piercing and lethal weapon.'},
+  {author_id: 37, title: 'Byakugan', text: 'A powerful dojutsu unique to the Hyuga clan. The Byakugan grants Hinata near 360-degree vision, allowing her to see through solid objects and predict the movements of her opponents.'},
+  {author_id: 39, title: 'Strength of a Hundred Seal', text: 'A powerful medical ninjutsu technique that Sakura learns from Tsunade, the Fifth Hokage. The Strength of a Hundred Seal temporarily enhances Sakura\'s physical abilities, making her much stronger and faster.'},
+  {author_id: 38, title: 'Sharingan', text: 'An advanced dojutsu that Kakashi possesses. The Sharingan allows him to copy other ninja\'s techniques, as well as provide enhanced perception and reaction time.'},
+  {author_id: 36, title: 'Falcon Punch', text: 'A powerful taijutsu technique that Sasuke learns from Orochimaru. The technique involves launching a powerful punch with enough force to knock the target away.'},
+  {author_id: 37, title: 'Protective Eight Trigrams Sixty-Four Palms', text: 'A defensive version of the Eight Trigrams Sixty-Four Palms technique. Hinata uses this technique to protect herself and her allies from harm.'}
 ])
 
 comments = Comment.create([
