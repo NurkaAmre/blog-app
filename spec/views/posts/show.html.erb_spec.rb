@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
   describe 'Post show page process' do
     before(:each) do
-      @user = User.create(name: 'Nurka', photo: 'https://i.imgur.com/nur.jpg', bio: 'I am a Amre\'s mother',
+      @user = User.create(name: 'Nurka', photo: 'https://google.com/nur.jpg', bio: 'I am a Amre\'s mother',
                           PostCounter: 2)
-      @user2 = User.create(name: 'Amre', photo: 'https://i.imgur.com/amir.jpg', bio: 'I am a Nurka\'s son',
+      @user2 = User.create(name: 'Amre', photo: 'https://google.com/amir.jpg', bio: 'I am a Nurka\'s son',
                            PostCounter: 3)
       @first_post = Post.create(author: @user, title: 'My first post', text: 'This is my first post',
                                 CommentsCounter: 0, LikesCounter: 0)
