@@ -54,5 +54,11 @@ RSpec.describe 'Post index page', type: :feature do
       click_link('All comments')
       expect(page).to have_current_path(user_post_path(@user, @first_post))
     end
+
+    it 'redirects to posts show page' do
+      click_on 'All comments'
+      expect(page).to have_current_path user_post_path(@user.id, @post.id)
+    end
+
   end
 end
