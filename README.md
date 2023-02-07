@@ -160,6 +160,12 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/AmreNurgul)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/amre-nurgul/)
 
+👤 **Sajeel Zafar**
+
+- GitHub: [@Sajeelzafar](https://github.com/Sajeelzafar)
+- Twitter: [@SajeelZafar6](https://twitter.com/SajeelZafar6)
+- LinkedIn: [Sajeel Zafar](https://www.linkedin.com/in/sajeelzafar/)
+
 👤 **Tashobya Israel**
 
 - GitHub: [@githubhandle](https://github.com/tashisrael)
