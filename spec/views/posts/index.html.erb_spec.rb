@@ -59,6 +59,5 @@ RSpec.describe 'Post index page', type: :feature do
       click_on 'All comments'
       expect(page).to have_current_path user_post_path(@user.id, @post.id)
     end
-
   end
 end
