@@ -26,6 +26,10 @@ RSpec.describe 'Post index page', type: :feature do
       expect(page.body).to have_content(@user.PostCounter.to_s)
     end
 
+    it "I can see post's title" do
+      expect(page.body).to have_content(@first_post.title)
+    end
+
     it "should some of the post's body" do
       expect(page.body).to have_content(@first_post.text)
     end
@@ -44,6 +48,11 @@ RSpec.describe 'Post index page', type: :feature do
 
     it 'should not show a pagination button' do
       expect(page.body).not_to have_content('Pagination')
+    end
+
+    it "When I click on a 'All comments' it should redirects to that post's show page" do
+      click_link('All comments')
+      expect(page).to have_current_path(user_post_path(@user, @first_post))
     end
   end
 end

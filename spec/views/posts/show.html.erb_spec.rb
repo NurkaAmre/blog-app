@@ -15,7 +15,7 @@ RSpec.describe 'Post show page', type: :feature do
     end
 
     it "should show a post's title" do
-      expect(page.body).to have_content(@first_post.text)
+      expect(page.body).to have_content(@first_post.title)
     end
 
     it 'should show who wrote the post' do

@@ -13,27 +13,27 @@ RSpec.describe 'User show page', type: :feature do
       visit user_path(@user.id)
     end
 
-    it 'should show the user profile picture' do
+    it 'I can see the user\'s profile picture' do
       expect(page.body).to include(@user.photo)
     end
 
-    it 'should show the user username' do
+    it 'I can see the user\'s username.' do
       expect(page.body).to have_content(@user.name)
     end
 
-    it 'should show the number of post the user has writen' do
+    it 'I can see the number of posts the user has written.' do
       expect(page.body).to have_content(@user.PostCounter.to_s)
     end
 
-    it 'should sho wthe the users bio' do
+    it 'I can see the user\'s bio' do
       expect(page.body).to have_content(@user.bio)
     end
 
-    it "should show a button that lets me view all of a user's posts" do
+    it "I can see a button that lets me view all of a user's posts" do
       expect(page.body).to have_content('See all posts')
     end
 
-    it "When I click to see all posts, it should redirects me to the user's post's index page" do
+    it "When I click to see all posts button, it should redirects me to the user's post's index page" do
       click_link('See all posts')
       expect(page).to have_current_path(user_posts_path(@user))
     end
