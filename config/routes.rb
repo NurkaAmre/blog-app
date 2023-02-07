@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  root "users#index"
+  root to: "users#index"
   
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create] do
