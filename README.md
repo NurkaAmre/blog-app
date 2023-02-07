@@ -160,6 +160,18 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/AmreNurgul)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/amre-nurgul/)
 
+👤 **Sajeel Zafar**
+
+- GitHub: [@Sajeelzafar](https://github.com/Sajeelzafar)
+- Twitter: [@SajeelZafar6](https://twitter.com/SajeelZafar6)
+- LinkedIn: [Sajeel Zafar](https://www.linkedin.com/in/sajeelzafar/)
+
+👤 **Tashobya Israel**
+
+- GitHub: [@githubhandle](https://github.com/tashisrael)
+- Twitter: [@twitterhandle](https://twitter.com/tashisrael)
+- Linkedin: [@linkedinhandle](https://www.linkedin.com/in/tashobya-israel-6a66b0181/l)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -223,7 +235,7 @@ I would like to thank...
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
-
 This project is [MIT](./MIT.md) licensed.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

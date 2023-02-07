@@ -1,17 +1,18 @@
- <% counter = 1 %>
-  <% @user.posts.each do |post| %>
+<% counter = 1 %>
+<% @user.posts.each do |post| %>
   <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
+      <h6 class='card-text text-light text-end mt-0"'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
       <h3 class="card-title text-black">Post #<%= counter %> by <%= post.author.name %></h3>
-       <h6 class='card-text text-black text-end mb-5 mt-0"'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+      <h4 class="mt-3 mb-3"><%= post.title %></h4>
       <h6><%= post.text %></h6>
-   </div>
+    </div>
   </div>
-    <% counter += 1 %>
-  <% end %>
+  <% counter += 1 %>
+<% end %>
    <%# <%= link_to 'Add new comment', user_post_path(id: post.id), class: "btn btn-secondary mt-3"%>
 
-   <% @post.recent_comments.each do |comment| %>
+<% @post.recent_comments.each do |comment| %>
     <hr p-2>
         <div class="card-body mb-5">
           <p>
