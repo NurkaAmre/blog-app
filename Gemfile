@@ -75,5 +75,6 @@ group :test do
 end
 
 gem 'bootstrap_form', '~> 5.1'
+gem 'cancancan'
 gem 'devise'
 gem 'font-awesome-rails'
