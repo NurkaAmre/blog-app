@@ -1,0 +1,38 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field mb-3">
+    <%= f.text_field :name, class: "form-control", placeholder: 'Username' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :photo %><br />
+    <%= f.text_field :photo, class: "form-control", placeholder: 'Add photo link...' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.text_area :bio, class: "form-control", placeholder: 'User bio...' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.email_field :email, class: "form-control", placeholder: 'Email', autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.password_field :password, class: "form-control", placeholder: 'Password', autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+    <em class="text-danger">(Minimum <%= @minimum_password_length %> characters)</em>
+    <% end %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: 'Confirm password', autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-warning mt-10 mb-10" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>

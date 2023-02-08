@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
@@ -90,6 +91,12 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     font-awesome-rails (4.7.0.8)
@@ -133,6 +140,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-x64-mingw-ucrt)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.4.5-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -175,6 +183,9 @@ GEM
     regexp_parser (2.6.2)
     reline (0.3.2)
       io-console (~> 0.5)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.5)
     rspec-core (3.12.0)
       rspec-support (~> 3.12.0)
@@ -219,6 +230,8 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -244,6 +257,7 @@ DEPENDENCIES
   bootstrap_form (~> 5.1)
   capybara
   debug
+  devise
   font-awesome-rails
   importmap-rails
   jbuilder
