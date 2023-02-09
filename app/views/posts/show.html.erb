@@ -16,8 +16,14 @@
     <hr p-2>
         <div class="card-body mb-5">
           <p>
+            <div class="d-flex justify-content-end">
+            <% if can? :destroy, comment %>
+              <%= button_to "X", user_post_comment_path(comment.author, comment.post, comment), class: "btn btn-dark center text-light m-2", method: :delete, data: { turbo: false } %>
+            <% end %>
+            </div>
             <strong><%= comment.author.name %>:</strong>
             <span><%= comment.text %></span>
+           
           </p>
         </div>
       <% end %>
