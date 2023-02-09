@@ -32,6 +32,6 @@ class Ability
   
       can :destroy, Post, author: user
       can :destroy, Comment, author: user
-    end
+
   end
 end

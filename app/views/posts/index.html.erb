@@ -1,6 +1,6 @@
 <section class="container">
 <div class="row mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded d-flex" style="width: auto;">
-     <div class="col m-4", style="width: 15rem; heigth: 15rem;">
+     <div class="col m-4", style="width: 10rem; heigth: 10rem;">
       <% if @user.photo %>
         <img src="<%= @user.photo %>" class="rounded float-start" alt="...">
       <% else %>
@@ -18,7 +18,7 @@
   <% @posts.each do |post| %>
   <div class="card mt-5  --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
-    <h6 class='card-text text-light text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+    <h6 class='card-text text-dark text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
       <h3 class="card-title text-light">Post #<%= counter %></h3>
       <h4 class="mb-5 mt-5"><%= post.title %></h4>
       
@@ -28,7 +28,9 @@
       <%= link_to 'All comments', user_post_path(id: post.id), class: "btn btn-dark mt-5 mb-0 center text-light mr-5", style: "width: auto"%>
       <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes", class: 'like_button' do |form| %>
       <%= form.submit "Like Post", class: "btn btn-dark mt-5 mb-0 center text-light" %>
+      <%= puts 'nutka' %>
       </div>
+    
       <% end %>
       
       
@@ -48,9 +50,17 @@
   <div class="text-center">
 
   </div>
+
+  <% if can? :destroy, post %>
+          <%= button_to 'Delete', user_post_path(post.author_id, post.id), 
+          method: :delete, data: { turbo: false }, 
+          class: "btn btn-dark mt-5" %>
+    <% end %> 
  
   <% end %>
   
-  
+    
   </section>
+
+
      

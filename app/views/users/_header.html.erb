@@ -10,6 +10,7 @@
         <%= link_to 'Users', users_path, class: 'nav-link'%>
         </li>
       </ul>
+      
         <li class="d-flex justify-content-end ">
         <% if user_signed_in? %>
         <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-warning  text-end', data: { turbo: false } %>
