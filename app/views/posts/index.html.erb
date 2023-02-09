@@ -1,13 +1,13 @@
 <section class="container">
-<div class="row mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded d-flex" style="width: auto;">
-     <div class="col m-4", style="width: 10rem; heigth: 10rem;">
+<div class="row mb-3 shadow-lg p-3 bg-body-tertiary rounded d-flex" style="width: auto;">
+     <div class="col">
       <% if @user.photo %>
-        <img src="<%= @user.photo %>" class="rounded float-start" alt="...">
+        <img src="<%= @user.photo %>" class="rounded float-start", style="width: 5rem; heigth: 5rem; alt="...">
       <% else %>
           <p> No image found </p>
       <% end %>
      </div>
-    <div class="col-md-8">
+    <div class="col-md-11">
       <div class='card-body'>
         <h1 class="card-title text-decoration-none mt-4"><%= @user.name %></h1>  
         <h6 class="card-text ,t-2">Number of posts: <span><%= @user.PostCounter %></span></h6>
@@ -16,19 +16,25 @@
   </div>
 <% counter = 1 %>
   <% @posts.each do |post| %>
-  <div class="card mt-5  --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
+  <div class="card mt-5 mb-5 --bs-dark bg-warning border border-dark-subtle" style="width: 80rem;">
     <div class='card-body'>
-    <h6 class='card-text text-dark text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6>
+      <div class="d-flex justify-content-end mb-3">
+  <% if can? :destroy, post %>
+    <%= button_to 'X', user_post_path(post.author_id, post.id), 
+    method: :delete, data: { turbo: false }, 
+    class: "btn btn-dark ml-auto justify-content-end" %>
+  <% end %>
+</div>
+    <h6 class='card-text text-dark text-end'>Comments: <%= post.CommentsCounter%> Likes: <%= post.LikesCounter %></h6> 
+  
       <h3 class="card-title text-light">Post #<%= counter %></h3>
       <h4 class="mb-5 mt-5"><%= post.title %></h4>
-      
       <h6><%= post.text %></h6>
-      <div class="display flex">
-      <%= link_to 'Create new post', new_user_post_path(@user), class: "btn btn-dark mt-5 mb-0 text-light mr-5"%><br>
-      <%= link_to 'All comments', user_post_path(id: post.id), class: "btn btn-dark mt-5 mb-0 center text-light mr-5", style: "width: auto"%>
+      <div class="d-flex justify-content-center gap-5">
+      <%= link_to 'Create post', new_user_post_path(@user), class: "btn btn-dark mt-5 text-light"%><br>
+      <%= link_to 'All comments', user_post_path(id: post.id), class: "btn btn-dark mt-5 text-light"%>
       <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes", class: 'like_button' do |form| %>
-      <%= form.submit "Like Post", class: "btn btn-dark mt-5 mb-0 center text-light" %>
-      <%= puts 'nutka' %>
+      <%= form.submit "Like a Post", class: "btn btn-dark mt-5 text-light" %>
       </div>
     
       <% end %>
@@ -51,11 +57,7 @@
 
   </div>
 
-  <% if can? :destroy, post %>
-          <%= button_to 'Delete', user_post_path(post.author_id, post.id), 
-          method: :delete, data: { turbo: false }, 
-          class: "btn btn-dark mt-5" %>
-    <% end %> 
+  
  
   <% end %>
   
