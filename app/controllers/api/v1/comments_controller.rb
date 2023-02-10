@@ -5,22 +5,14 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
     render json: @post.comments
   end
 
-  # def create
-  #   @comment = Comment.new(comment_params)
-
-  #   if @comment.save
-  #     render json: @comment, status: :created
-  #   else
-  #     render json: @comment.errors, status: :unprocessable_entity
-  #   end
-  # end
   def create
+    current_user = params[:user_id]
     @comment = Comment.new(comment_params)
-    @comment.author_id = current_user.id
+    @comment.author_id = current_user
     @comment.post_id = params[:post_id]
-    post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comment.save!
-    json_response(@comment, :created)
+    render json: @comment, status: :created
   end
 
   private
