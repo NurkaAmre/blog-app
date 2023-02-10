@@ -1,0 +1,172 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/{user_id}/posts/{post_id}/comments?access_token={access_token}":
+    get:
+      summary: Get all comments
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        description: Author ID
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        description: Post ID
+        required: true
+        schema:
+          type: string
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: comments found
+        '404':
+          description: comments not found
+    post:
+      summary: Create a comment
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        description: Author ID
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        description: Post ID
+        required: true
+        schema:
+          type: string
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: comment created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+  "/api/v1/users/{user_id}/posts?access_token={access_token}":
+    get:
+      summary: List all posts for a User
+      tags:
+      - Posts
+      - All Posts
+      parameters:
+      - name: user_id
+        in: path
+        description: Author ID
+        required: true
+        schema:
+          type: string
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+        '404':
+          description: posts not found
+  "/api/v1/users/{user_id}/posts/{id}?access_token={access_token}":
+    get:
+      summary: Show single post of User
+      tags:
+      - Posts
+      - Single Post
+      parameters:
+      - name: user_id
+        in: path
+        description: Author ID
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: Post ID
+        required: true
+        schema:
+          type: string
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: post found
+        '404':
+          description: post not found
+  "/api/v1/users?access_token={access_token}":
+    get:
+      summary: List all Users
+      tags:
+      - Users
+      - All Users
+      parameters:
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+        '401':
+          description: restrited access, no access_token provided
+  "/api/v1/users/{id}?access_token={access_token}":
+    get:
+      summary: Show single post of User
+      tags:
+      - Users
+      - Single User
+      parameters:
+      - name: id
+        in: path
+        description: Author ID
+        required: true
+        schema:
+          type: string
+      - name: access_token
+        in: path
+        description: Authentication token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+        '404':
+          description: user not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
